@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "School Rich Presence",
+    "version": "1.0",
+    "permissions": [
+        "*://*.brightspace.com/*",
+        "*://*.youseeu.com/*"
+    ],
+    "content_scripts": [{
+		"matches": ["*://*.brightspace.com/*"],
+		"js": ["websites/brightspace.js"],
+		"run_at": "document_start",
+		"all_frames": true
+	}, {
+		"matches": ["*://*.youseeu.com/*"],
+		"js": ["websites/bongo.js"],
+		"run_at": "document_start",
+		"all_frames": true
+	}]
+}
