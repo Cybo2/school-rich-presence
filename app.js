@@ -22,6 +22,9 @@ rpc.on("ready", () => {
                 }
             }
         });
+        socket.on("close", (code, reason) => {
+            rpc.clearActivity();
+        });
     });
 });
 
