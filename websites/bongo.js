@@ -5,6 +5,14 @@ window.addEventListener("load", (event) => {
     let socket = new WebSocket("ws://localhost:6821");
 
     socket.addEventListener("open", (event) => {
+        socket.send(JSON.stringify({
+            command: "set-presence",
+            data: {
+                details: "Bongo",
+                state: "Watching a live session",
+                largeImageKey: "bongo-circle-blue"
+            }
+        }));
         let content_title_header_interval = setInterval(() => {
             if (!document.getElementsByClassName("content-title-header")[0]) return;
             if (document.getElementsByClassName("content-title-header")[0].innerText.toLowerCase() == "meeting recording") {
@@ -12,7 +20,7 @@ window.addEventListener("load", (event) => {
                     command: "set-presence",
                     data: {
                         details: "Bongo",
-                        state: "Watching session recording",
+                        state: "Watching a session recording",
                         largeImageKey: "bongo-circle-blue"
                     }
                 }));
