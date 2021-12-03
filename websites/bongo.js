@@ -1,7 +1,6 @@
 //if (!window.location.host.match("bongo")) return;
 
 window.addEventListener("load", (event) => {
-    console.log("loaded");
     let socket = new WebSocket("ws://localhost:6821");
 
     socket.addEventListener("open", (event) => {
@@ -26,6 +25,6 @@ window.addEventListener("load", (event) => {
                 }));
             };
             clearInterval(content_title_header_interval);
-        }, 500);
+        }, 1000);
     });
 });
