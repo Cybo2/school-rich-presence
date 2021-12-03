@@ -13,7 +13,7 @@ window.addEventListener("load", (event) => {
                     data: {
                         details: "Bongo",
                         state: "Watching session recording",
-                        largeImageKey: "bongo-logo"
+                        largeImageKey: "bongo-circle-blue"
                     }
                 }));
             };
